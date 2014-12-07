@@ -9,11 +9,30 @@
 /* Begin PBXBuildFile section */
 		8EE55FE61A329E9100BF821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FE51A329E9100BF821C /* main.m */; };
 		8EE55FE91A329E9100BF821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FE81A329E9100BF821C /* AppDelegate.m */; };
-		8EE55FEC1A329E9100BF821C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FEB1A329E9100BF821C /* ViewController.m */; };
 		8EE55FEF1A329E9100BF821C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FED1A329E9100BF821C /* Main.storyboard */; };
 		8EE55FF11A329E9100BF821C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FF01A329E9100BF821C /* Images.xcassets */; };
 		8EE55FF41A329E9100BF821C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FF21A329E9100BF821C /* LaunchScreen.xib */; };
 		8EE560001A329E9100BF821C /* JoyPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FFF1A329E9100BF821C /* JoyPadTests.m */; };
+		8EE5600B1A329ED700BF821C /* BTLEPairingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5600A1A329ED700BF821C /* BTLEPairingViewController.m */; };
+		8EE5600E1A329EF100BF821C /* ConfigurationsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */; };
+		8EE560111A329F6000BF821C /* JoyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE560101A329F6000BF821C /* JoyPadViewController.m */; };
+		8EE560141A329FB300BF821C /* BTLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE560131A329FB300BF821C /* BTLEPeripheral.m */; };
+		8EE560241A32A06300BF821C /* ButtonA_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560151A32A06300BF821C /* ButtonA_pressed.png */; };
+		8EE560251A32A06300BF821C /* ButtonA.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560161A32A06300BF821C /* ButtonA.png */; };
+		8EE560261A32A06300BF821C /* ButtonB_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560171A32A06300BF821C /* ButtonB_pressed.png */; };
+		8EE560271A32A06300BF821C /* ButtonB.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560181A32A06300BF821C /* ButtonB.png */; };
+		8EE560281A32A06300BF821C /* ButtonX_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560191A32A06300BF821C /* ButtonX_pressed.png */; };
+		8EE560291A32A06300BF821C /* ButtonX.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601A1A32A06300BF821C /* ButtonX.png */; };
+		8EE5602A1A32A06300BF821C /* ButtonY_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601B1A32A06300BF821C /* ButtonY_pressed.png */; };
+		8EE5602B1A32A06300BF821C /* ButtonY.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601C1A32A06300BF821C /* ButtonY.png */; };
+		8EE5602C1A32A06300BF821C /* DirectionalPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601D1A32A06300BF821C /* DirectionalPad.png */; };
+		8EE5602D1A32A06300BF821C /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601E1A32A06300BF821C /* downArrow.png */; };
+		8EE5602E1A32A06300BF821C /* iOSArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601F1A32A06300BF821C /* iOSArrow.png */; };
+		8EE5602F1A32A06300BF821C /* joystickTouchedImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560201A32A06300BF821C /* joystickTouchedImage.png */; };
+		8EE560301A32A06300BF821C /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560211A32A06300BF821C /* leftArrow.png */; };
+		8EE560311A32A06300BF821C /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560221A32A06300BF821C /* rightArrow.png */; };
+		8EE560321A32A06300BF821C /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560231A32A06300BF821C /* upArrow.png */; };
+		8EE560351A32A0BA00BF821C /* KeyCodeRepresentations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +51,36 @@
 		8EE55FE51A329E9100BF821C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8EE55FE71A329E9100BF821C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EE55FE81A329E9100BF821C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8EE55FEA1A329E9100BF821C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8EE55FEB1A329E9100BF821C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8EE55FEE1A329E9100BF821C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EE55FF01A329E9100BF821C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8EE55FF31A329E9100BF821C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8EE55FF91A329E9100BF821C /* JoyPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE55FFE1A329E9100BF821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EE55FFF1A329E9100BF821C /* JoyPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyPadTests.m; sourceTree = "<group>"; };
+		8EE560091A329ED700BF821C /* BTLEPairingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPairingViewController.h; sourceTree = "<group>"; };
+		8EE5600A1A329ED700BF821C /* BTLEPairingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPairingViewController.m; sourceTree = "<group>"; };
+		8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationsMenuViewController.h; sourceTree = "<group>"; };
+		8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationsMenuViewController.m; sourceTree = "<group>"; };
+		8EE5600F1A329F6000BF821C /* JoyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyPadViewController.h; sourceTree = "<group>"; };
+		8EE560101A329F6000BF821C /* JoyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyPadViewController.m; sourceTree = "<group>"; };
+		8EE560121A329FB300BF821C /* BTLEPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPeripheral.h; sourceTree = "<group>"; };
+		8EE560131A329FB300BF821C /* BTLEPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPeripheral.m; sourceTree = "<group>"; };
+		8EE560151A32A06300BF821C /* ButtonA_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonA_pressed.png; sourceTree = "<group>"; };
+		8EE560161A32A06300BF821C /* ButtonA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonA.png; sourceTree = "<group>"; };
+		8EE560171A32A06300BF821C /* ButtonB_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonB_pressed.png; sourceTree = "<group>"; };
+		8EE560181A32A06300BF821C /* ButtonB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonB.png; sourceTree = "<group>"; };
+		8EE560191A32A06300BF821C /* ButtonX_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonX_pressed.png; sourceTree = "<group>"; };
+		8EE5601A1A32A06300BF821C /* ButtonX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonX.png; sourceTree = "<group>"; };
+		8EE5601B1A32A06300BF821C /* ButtonY_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonY_pressed.png; sourceTree = "<group>"; };
+		8EE5601C1A32A06300BF821C /* ButtonY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonY.png; sourceTree = "<group>"; };
+		8EE5601D1A32A06300BF821C /* DirectionalPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DirectionalPad.png; sourceTree = "<group>"; };
+		8EE5601E1A32A06300BF821C /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
+		8EE5601F1A32A06300BF821C /* iOSArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSArrow.png; sourceTree = "<group>"; };
+		8EE560201A32A06300BF821C /* joystickTouchedImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystickTouchedImage.png; sourceTree = "<group>"; };
+		8EE560211A32A06300BF821C /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		8EE560221A32A06300BF821C /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		8EE560231A32A06300BF821C /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrow.png; sourceTree = "<group>"; };
+		8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyCodeRepresentations.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +122,20 @@
 		8EE55FE21A329E9100BF821C /* JoyPad */ = {
 			isa = PBXGroup;
 			children = (
+				8EE5600F1A329F6000BF821C /* JoyPadViewController.h */,
+				8EE560091A329ED700BF821C /* BTLEPairingViewController.h */,
+				8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */,
+				8EE560101A329F6000BF821C /* JoyPadViewController.m */,
+				8EE5600A1A329ED700BF821C /* BTLEPairingViewController.m */,
+				8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */,
+				8EE55FED1A329E9100BF821C /* Main.storyboard */,
 				8EE55FE71A329E9100BF821C /* AppDelegate.h */,
 				8EE55FE81A329E9100BF821C /* AppDelegate.m */,
-				8EE55FEA1A329E9100BF821C /* ViewController.h */,
-				8EE55FEB1A329E9100BF821C /* ViewController.m */,
-				8EE55FED1A329E9100BF821C /* Main.storyboard */,
+				8EE560121A329FB300BF821C /* BTLEPeripheral.h */,
+				8EE560131A329FB300BF821C /* BTLEPeripheral.m */,
 				8EE55FF01A329E9100BF821C /* Images.xcassets */,
 				8EE55FF21A329E9100BF821C /* LaunchScreen.xib */,
+				8EE560331A32A06D00BF821C /* Images */,
 				8EE55FE31A329E9100BF821C /* Supporting Files */,
 			);
 			path = JoyPad;
@@ -96,6 +144,7 @@
 		8EE55FE31A329E9100BF821C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */,
 				8EE55FE41A329E9100BF821C /* Info.plist */,
 				8EE55FE51A329E9100BF821C /* main.m */,
 			);
@@ -117,6 +166,28 @@
 				8EE55FFE1A329E9100BF821C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EE560331A32A06D00BF821C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8EE560151A32A06300BF821C /* ButtonA_pressed.png */,
+				8EE560161A32A06300BF821C /* ButtonA.png */,
+				8EE560171A32A06300BF821C /* ButtonB_pressed.png */,
+				8EE560181A32A06300BF821C /* ButtonB.png */,
+				8EE560191A32A06300BF821C /* ButtonX_pressed.png */,
+				8EE5601A1A32A06300BF821C /* ButtonX.png */,
+				8EE5601B1A32A06300BF821C /* ButtonY_pressed.png */,
+				8EE5601C1A32A06300BF821C /* ButtonY.png */,
+				8EE5601D1A32A06300BF821C /* DirectionalPad.png */,
+				8EE5601F1A32A06300BF821C /* iOSArrow.png */,
+				8EE560201A32A06300BF821C /* joystickTouchedImage.png */,
+				8EE560231A32A06300BF821C /* upArrow.png */,
+				8EE5601E1A32A06300BF821C /* downArrow.png */,
+				8EE560211A32A06300BF821C /* leftArrow.png */,
+				8EE560221A32A06300BF821C /* rightArrow.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +270,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE5602C1A32A06300BF821C /* DirectionalPad.png in Resources */,
+				8EE560311A32A06300BF821C /* rightArrow.png in Resources */,
+				8EE560271A32A06300BF821C /* ButtonB.png in Resources */,
+				8EE5602D1A32A06300BF821C /* downArrow.png in Resources */,
+				8EE560241A32A06300BF821C /* ButtonA_pressed.png in Resources */,
 				8EE55FEF1A329E9100BF821C /* Main.storyboard in Resources */,
+				8EE560251A32A06300BF821C /* ButtonA.png in Resources */,
+				8EE560301A32A06300BF821C /* leftArrow.png in Resources */,
+				8EE5602A1A32A06300BF821C /* ButtonY_pressed.png in Resources */,
+				8EE5602B1A32A06300BF821C /* ButtonY.png in Resources */,
+				8EE560321A32A06300BF821C /* upArrow.png in Resources */,
 				8EE55FF41A329E9100BF821C /* LaunchScreen.xib in Resources */,
 				8EE55FF11A329E9100BF821C /* Images.xcassets in Resources */,
+				8EE560261A32A06300BF821C /* ButtonB_pressed.png in Resources */,
+				8EE5602E1A32A06300BF821C /* iOSArrow.png in Resources */,
+				8EE560291A32A06300BF821C /* ButtonX.png in Resources */,
+				8EE560351A32A0BA00BF821C /* KeyCodeRepresentations.plist in Resources */,
+				8EE560281A32A06300BF821C /* ButtonX_pressed.png in Resources */,
+				8EE5602F1A32A06300BF821C /* joystickTouchedImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EE55FEC1A329E9100BF821C /* ViewController.m in Sources */,
+				8EE560141A329FB300BF821C /* BTLEPeripheral.m in Sources */,
+				8EE560111A329F6000BF821C /* JoyPadViewController.m in Sources */,
 				8EE55FE91A329E9100BF821C /* AppDelegate.m in Sources */,
+				8EE5600E1A329EF100BF821C /* ConfigurationsMenuViewController.m in Sources */,
+				8EE5600B1A329ED700BF821C /* BTLEPairingViewController.m in Sources */,
 				8EE55FE61A329E9100BF821C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +504,7 @@
 				8EE560051A329E9100BF821C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EE560061A329E9100BF821C /* Build configuration list for PBXNativeTarget "JoyPadTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +513,7 @@
 				8EE560081A329E9100BF821C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

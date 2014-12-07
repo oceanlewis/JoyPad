@@ -7,9 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "JoyPadViewController.h"
+#import "BTLEPairingViewController.h"
+#import "ConfigurationsMenuViewController.h"
 
 @interface AppDelegate ()
-
+@property (weak, nonatomic) UIStoryboard *mainStoryboard;
+@property (strong, nonatomic) ConfigurationsMenuViewController *configurationsView;
+@property (strong, nonatomic) JoyPadViewController *joypadView;
+@property (strong, nonatomic) BTLEPairingViewController *pairingView;
+@property (strong, nonatomic) BTLEPeripheral *bluetoothServer;
 @end
 
 @implementation AppDelegate
@@ -17,6 +24,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(deviceOrientationWasChanged:)
+                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+                                               object:nil];
+    self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
+    self.configurationsView = [self.mainStoryboard instantiateInitialViewController];
+    self.joypadView = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"JoypadView"];
+    self.pairingView = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"PairingView"];
+    //TODO: alloc+init bluetoothServer
+    
     return YES;
 }
 
@@ -40,6 +57,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)deviceOrientationWasChanged:(NSNotification *)notification {
+    
 }
 
 @end
