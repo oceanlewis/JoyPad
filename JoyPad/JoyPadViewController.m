@@ -10,38 +10,44 @@
 
 @implementation JoyPadViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [_joystickView setHidden:YES];
+    dpadOrigin = _joystickBase.bounds.origin;
+    [_joystickBase setUserInteractionEnabled:YES];
+    dpadOrigin = _joystickBase.center;
+}
+
+//- (void)buttonEvent:(NSString *)buttonName buttonState:(BOOL)wasPresssed;
 #pragma mark - Standard Button Functionality
 - (IBAction)buttonDown:(id)sender {
-    //NSLog([NSString stringWithFormat:@"%@",[sender restorationIdentifier]]);
-    //    NSString *keyCode = [sender label];
-    //[self forwardButtonEvent:sender keyState:YES];
+    NSString *buttonName = [sender restorationIdentifier];
+    //NSLog(@"%@ Pressed.",buttonName);
+    [self.bluetoothServer buttonEvent:buttonName buttonState:YES];
 }
 
 - (IBAction)buttonRelease:(id)sender {
-    //[self forwardButtonEvent:sender keyState:NO];
+    NSString *buttonName = [sender restorationIdentifier];
+    //NSLog(@"%@ Released.",buttonName);
+    [self.bluetoothServer buttonEvent:buttonName buttonState:NO];
 }
 
 
 #pragma mark - Directional Pad Functionality
 - (IBAction)longPressRecognized:(id)sender {
     if ([_longPressGestureRecognizer state] == UIGestureRecognizerStateBegan) {
-        touchLocation = [_longPressGestureRecognizer
-                         locationInView:self.view];
+        touchLocation = [_longPressGestureRecognizer locationInView:self.view];
         [self moveStickTo:touchLocation];
         [_joystickView setHidden:NO];
-        //NSLog(@"AAH, TOUCHY!");
     }
-    if ([_longPressGestureRecognizer state] == UIGestureRecognizerStateEnded) {
+    else if ([_longPressGestureRecognizer state] == UIGestureRecognizerStateEnded) {
         [_joystickView setHidden:YES];
-        [self moveStickTo:joystickCenter];
-        //NSLog(@"NO MORE TOUCHY!");
+        [self moveStickTo:dpadOrigin];
     }
-    if ([_longPressGestureRecognizer state] == UIGestureRecognizerStateChanged) {
-        touchLocation = [_longPressGestureRecognizer
-                         locationInView:self.view];
+    else if ([_longPressGestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        touchLocation = [_longPressGestureRecognizer locationInView:self.view];
         [self moveStickTo:touchLocation];
     }
-    //NSLog([NSString stringWithFormat:@"Location x:%f y:%f",touchLocation.x,touchLocation.y]);
 }
 
 - (IBAction)panRecognized:(id)sender {
@@ -49,32 +55,30 @@
         touchLocation = [_panGestureRecognizer locationInView:self.view];
         [self moveStickTo:touchLocation];
         [_joystickView setHidden:NO];
-        //NSLog(@"AAH, TOUCHY!");
     }
-    if ([_panGestureRecognizer state] == UIGestureRecognizerStateEnded) {
+    else if ([_panGestureRecognizer state] == UIGestureRecognizerStateEnded) {
         [_joystickView setHidden:YES];
-        [self moveStickTo:joystickCenter];
-        //NSLog(@"NO MORE TOUCHY!");
+        [self moveStickTo:dpadOrigin];
     }
-    if ([_panGestureRecognizer state] == UIGestureRecognizerStateChanged) {
+    else if ([_panGestureRecognizer state] == UIGestureRecognizerStateChanged) {
         touchLocation = [_panGestureRecognizer locationInView:self.view];
         [self moveStickTo:touchLocation];
     }
-    //NSLog([NSString stringWithFormat:@"Location x:%f y:%f",touchLocation.x,touchLocation.y]);
 }
 
+//- (void)joystickEvent:(JoystickDelta)deltas;
 - (void)moveStickTo:(CGPoint)location {
     _joystickView.center = location;
-    touchDeltaXFromJStickCenter = [NSNumber numberWithFloat:(location.x - joystickCenter.x)];
-    touchDeltaYFromJStickCenter = [NSNumber numberWithFloat:(location.y - joystickCenter.y)];
-    //NSLog([NSString stringWithFormat:@"Current Touch deltaX: %@\t\tdeltaY: %@", touchDeltaXFromJStickCenter.stringValue,touchDeltaYFromJStickCenter.stringValue]);
+    deltaFromJStickCenter.deltaX = (location.x - dpadOrigin.x);
+    deltaFromJStickCenter.deltaY = (location.y - dpadOrigin.y);
+    [self.bluetoothServer joystickEvent:deltaFromJStickCenter];
 }
 
 - (void)restoreSticksLocation {
-    _joystickView.center = joystickCenter;
-    touchDeltaXFromJStickCenter = 0;
-    touchDeltaYFromJStickCenter = 0;
-    NSLog([NSString stringWithFormat:@"Reset Touch deltaX: %@\t\tdeltaY: %@", touchDeltaXFromJStickCenter.stringValue,touchDeltaYFromJStickCenter.stringValue]);
+    _joystickView.center = dpadOrigin;
+    deltaFromJStickCenter.deltaX = 0;
+    deltaFromJStickCenter.deltaY = 0;
+    [self.bluetoothServer joystickEvent:deltaFromJStickCenter];
 }
 
 @end

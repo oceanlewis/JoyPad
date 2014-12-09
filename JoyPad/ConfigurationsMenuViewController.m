@@ -9,5 +9,9 @@
 #import "ConfigurationsMenuViewController.h"
 
 @implementation ConfigurationsMenuViewController
+- (IBAction)beginPairingProcess:(id)sender {
+    [self.bluetoothServer startAdvertisements];
+}
+
 
 @end

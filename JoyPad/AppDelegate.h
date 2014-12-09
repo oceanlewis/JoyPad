@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BTLEPeripheral.h"
+#import "JoyPadViewController.h"
+#import "ConfigurationsMenuViewController.h"
+@class JoyPadViewController;
+@class BTLEPeripheral;
+@class ConfigurationsMenuViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) BTLEPeripheral *bluetoothServer;
+@property (strong, nonatomic) ConfigurationsMenuViewController *configurationsView;
+@property (strong, nonatomic) JoyPadViewController *joypadView;
 
-
+- (void)beginPairingProcess;
 @end
-

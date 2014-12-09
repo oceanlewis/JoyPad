@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "JoyPadViewController.h"
-#import "BTLEPairingViewController.h"
+
+@class BTLEPairingViewController;
 
 @interface ConfigurationsMenuViewController : UIViewController
-
+@property BTLEPeripheral *bluetoothServer;
 @end

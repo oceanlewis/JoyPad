@@ -11,16 +11,10 @@
 
 @interface JoyPadViewController : UIViewController
 {
-    // How much of this is necessary?
-    CGPoint joystickCenter;
     CGPoint touchLocation;
-    NSNumber *touchDeltaYFromJStickCenter;
-    NSNumber *touchDeltaXFromJStickCenter;
+    JoystickDelta deltaFromJStickCenter;
     CGPoint dpadOrigin;
     CGPoint dpadDestination;
-    CGFloat viewWidth;
-    CGFloat viewHeight;
-    CGRect boundsHolder;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *joystickView;

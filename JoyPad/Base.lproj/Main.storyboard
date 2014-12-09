@@ -132,14 +132,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BJr-mE-dI2">
-                                <rect key="frame" x="77" y="496" width="152" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Bluetooth Pairing">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yg8-l4-NZP">
                                 <rect key="frame" x="16" y="333" width="288" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,48 +144,25 @@ When satisfied with your configuration, rotate your device to enter gamepad mode
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BJr-mE-dI2">
+                                <rect key="frame" x="77" y="496" width="152" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Bluetooth Pairing">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="beginPairingProcess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g4s-lk-azh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fRH-x7-3Sp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="284" y="472"/>
-        </scene>
-        <!--BTLEPairingViewController-->
-        <scene sceneID="1Pg-Ph-oeA">
-            <objects>
-                <viewController storyboardIdentifier="BTLEPairingView" title="BTLEPairingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="20T-RI-Clb" customClass="BTLEPairingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YvY-Yb-xfB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8lz-FR-g9P">
-                                <rect key="frame" x="16" y="504" width="35.5" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="6" minY="10" maxX="6" maxY="10"/>
-                                <state key="normal" image="iOSArrow.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4eN-K7-uFG">
-                                <rect key="frame" x="110" y="512" width="194" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Begin Pairing Process">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pfP-U7-lEg">
-                                <rect key="frame" x="0.0" y="93" width="320" height="342"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wEh-ra-Bf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="713" y="780"/>
         </scene>
         <!--JoyPadViewController-->
         <scene sceneID="4wA-l0-1BI">
@@ -215,23 +184,21 @@ When satisfied with your configuration, rotate your device to enter gamepad mode
                                 </state>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="7az-0d-yHd" appends="YES" id="XGc-BP-cYd"/>
+                                    <outletCollection property="gestureRecognizers" destination="qiE-Wy-khd" appends="YES" id="73M-aX-fPI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Start_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="06l-AM-1yb" userLabel="Start_Button">
-                                <rect key="frame" x="315" y="270" width="53" height="42"/>
+                                <rect key="frame" x="299" y="267" width="83" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Select_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="akW-Hc-LDZ" userLabel="Select_Button">
-                                <rect key="frame" x="201" y="270" width="69" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Select">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="buttonDown:" destination="cwO-QJ-XrD" eventType="touchDown" id="8JF-Fi-LTW"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpOutside" id="3zO-ct-JB5"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpInside" id="9iT-am-UXO"/>
+                                </connections>
                             </button>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystickTouchedImage.png" id="Sjd-Nt-NfD">
                                 <rect key="frame" x="71" y="201" width="50" height="50"/>
@@ -241,65 +208,82 @@ When satisfied with your configuration, rotate your device to enter gamepad mode
                                 </accessibility>
                             </imageView>
                             <button contentMode="scaleToFill" restorationIdentifier="X_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bbf-vy-uby">
-                                <rect key="frame" x="376" y="196" width="60" height="60"/>
+                                <rect key="frame" x="376" y="196" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="0.0" maxY="0.0"/>
+                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="X" image="ButtonX.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button contentMode="scaleToFill" restorationIdentifier="A_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vyw-yO-OAl">
-                                <rect key="frame" x="436" y="247" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
-                                </accessibility>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="A" image="ButtonA.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="buttonDown:" destination="cwO-QJ-XrD" eventType="touchDown" id="pt3-wd-k9j"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpOutside" id="CCv-je-NTY"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpInside" id="GHB-L3-QxO"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" restorationIdentifier="B_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YM9-C3-K3D">
-                                <rect key="frame" x="496" y="196" width="60" height="60"/>
+                                <rect key="frame" x="496" y="196" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="0.0" maxY="0.0"/>
+                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="B" image="ButtonB.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonDown:" destination="cwO-QJ-XrD" eventType="touchDown" id="2Ht-Vu-Vfc"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpOutside" id="2RQ-i3-beA"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpInside" id="Iin-Rs-teZ"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" restorationIdentifier="Y_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LbG-Hd-vu3">
-                                <rect key="frame" x="436" y="140" width="60" height="60"/>
+                                <rect key="frame" x="436" y="140" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="0.0" maxY="0.0"/>
+                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Y" image="ButtonY.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonDown:" destination="cwO-QJ-XrD" eventType="touchDown" id="TcE-gr-pyT"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpInside" id="JCP-Y1-C8L"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpOutside" id="ydb-3l-5E3"/>
+                                </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="TEE-3d-OVS">
-                                <rect key="frame" x="221" y="20" width="51" height="31"/>
+                            <button contentMode="scaleToFill" restorationIdentifier="A_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vyw-yO-OAl">
+                                <rect key="frame" x="436" y="246" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="jY4-aX-hsH">
-                                <rect key="frame" x="315" y="20" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                </accessibility>
+                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="A" image="ButtonA.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDown:" destination="cwO-QJ-XrD" eventType="touchDown" id="k8J-YC-yty"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpInside" id="bkZ-hg-9qe"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpOutside" id="q5z-iw-dDl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Select_Button" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="akW-Hc-LDZ" userLabel="Select_Button">
+                                <rect key="frame" x="198" y="267" width="86" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="nbI-GG-aLb">
-                                <rect key="frame" x="232" y="67" width="123" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDown:" destination="cwO-QJ-XrD" eventType="touchDown" id="iB8-fJ-geS"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpInside" id="5uc-NP-3D9"/>
+                                    <action selector="buttonRelease:" destination="cwO-QJ-XrD" eventType="touchUpOutside" id="an8-px-Xdu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -319,10 +303,18 @@ When satisfied with your configuration, rotate your device to enter gamepad mode
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aI-xM-vLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="7az-0d-yHd"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="qiE-Wy-khd"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="7az-0d-yHd">
+                    <connections>
+                        <action selector="panRecognized:" destination="cwO-QJ-XrD" id="S28-kL-4yw"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.0" id="qiE-Wy-khd">
+                    <connections>
+                        <action selector="longPressRecognized:" destination="cwO-QJ-XrD" id="KuU-jK-S7i"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="919" y="223"/>
+            <point key="canvasLocation" x="739" y="384"/>
         </scene>
     </scenes>
     <resources>
@@ -331,7 +323,6 @@ When satisfied with your configuration, rotate your device to enter gamepad mode
         <image name="ButtonX.png" width="52" height="52"/>
         <image name="ButtonY.png" width="52" height="52"/>
         <image name="DirectionalPad.png" width="180" height="180"/>
-        <image name="iOSArrow.png" width="51" height="90"/>
         <image name="joystickTouchedImage.png" width="61" height="61"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

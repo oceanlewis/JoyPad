@@ -13,7 +13,6 @@
 		8EE55FF11A329E9100BF821C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FF01A329E9100BF821C /* Images.xcassets */; };
 		8EE55FF41A329E9100BF821C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FF21A329E9100BF821C /* LaunchScreen.xib */; };
 		8EE560001A329E9100BF821C /* JoyPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FFF1A329E9100BF821C /* JoyPadTests.m */; };
-		8EE5600B1A329ED700BF821C /* BTLEPairingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5600A1A329ED700BF821C /* BTLEPairingViewController.m */; };
 		8EE5600E1A329EF100BF821C /* ConfigurationsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */; };
 		8EE560111A329F6000BF821C /* JoyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE560101A329F6000BF821C /* JoyPadViewController.m */; };
 		8EE560141A329FB300BF821C /* BTLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE560131A329FB300BF821C /* BTLEPeripheral.m */; };
@@ -57,8 +56,6 @@
 		8EE55FF91A329E9100BF821C /* JoyPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE55FFE1A329E9100BF821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EE55FFF1A329E9100BF821C /* JoyPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyPadTests.m; sourceTree = "<group>"; };
-		8EE560091A329ED700BF821C /* BTLEPairingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPairingViewController.h; sourceTree = "<group>"; };
-		8EE5600A1A329ED700BF821C /* BTLEPairingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPairingViewController.m; sourceTree = "<group>"; };
 		8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationsMenuViewController.h; sourceTree = "<group>"; };
 		8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationsMenuViewController.m; sourceTree = "<group>"; };
 		8EE5600F1A329F6000BF821C /* JoyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyPadViewController.h; sourceTree = "<group>"; };
@@ -122,15 +119,13 @@
 		8EE55FE21A329E9100BF821C /* JoyPad */ = {
 			isa = PBXGroup;
 			children = (
-				8EE5600F1A329F6000BF821C /* JoyPadViewController.h */,
-				8EE560091A329ED700BF821C /* BTLEPairingViewController.h */,
-				8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */,
-				8EE560101A329F6000BF821C /* JoyPadViewController.m */,
-				8EE5600A1A329ED700BF821C /* BTLEPairingViewController.m */,
-				8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */,
 				8EE55FED1A329E9100BF821C /* Main.storyboard */,
 				8EE55FE71A329E9100BF821C /* AppDelegate.h */,
 				8EE55FE81A329E9100BF821C /* AppDelegate.m */,
+				8EE5600F1A329F6000BF821C /* JoyPadViewController.h */,
+				8EE560101A329F6000BF821C /* JoyPadViewController.m */,
+				8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */,
+				8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */,
 				8EE560121A329FB300BF821C /* BTLEPeripheral.h */,
 				8EE560131A329FB300BF821C /* BTLEPeripheral.m */,
 				8EE55FF01A329E9100BF821C /* Images.xcassets */,
@@ -310,7 +305,6 @@
 				8EE560111A329F6000BF821C /* JoyPadViewController.m in Sources */,
 				8EE55FE91A329E9100BF821C /* AppDelegate.m in Sources */,
 				8EE5600E1A329EF100BF821C /* ConfigurationsMenuViewController.m in Sources */,
-				8EE5600B1A329ED700BF821C /* BTLEPairingViewController.m in Sources */,
 				8EE55FE61A329E9100BF821C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

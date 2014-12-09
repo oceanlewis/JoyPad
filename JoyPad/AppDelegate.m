@@ -7,16 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "JoyPadViewController.h"
-#import "BTLEPairingViewController.h"
-#import "ConfigurationsMenuViewController.h"
+
 
 @interface AppDelegate ()
 @property (weak, nonatomic) UIStoryboard *mainStoryboard;
-@property (strong, nonatomic) ConfigurationsMenuViewController *configurationsView;
-@property (strong, nonatomic) JoyPadViewController *joypadView;
-@property (strong, nonatomic) BTLEPairingViewController *pairingView;
-@property (strong, nonatomic) BTLEPeripheral *bluetoothServer;
 @end
 
 @implementation AppDelegate
@@ -28,12 +22,11 @@
                                              selector:@selector(deviceOrientationWasChanged:)
                                                  name:UIApplicationDidChangeStatusBarOrientationNotification
                                                object:nil];
-    self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
+    self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.configurationsView = [self.mainStoryboard instantiateInitialViewController];
-    self.joypadView = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"JoypadView"];
-    self.pairingView = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"PairingView"];
-    //TODO: alloc+init bluetoothServer
-    
+    self.joypadView = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"JoyPadView"];
+    self.bluetoothServer = [[BTLEPeripheral alloc] init];
+    self.joypadView.bluetoothServer = self.bluetoothServer;
     return YES;
 }
 
@@ -59,8 +52,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Custom Commands
+- (void)beginPairingProcess {
+    [self.bluetoothServer startAdvertisements];
+}
+#pragma mark - Scene Transitions
 - (void)deviceOrientationWasChanged:(NSNotification *)notification {
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    UIViewController *topView = self.window.rootViewController;
     
+    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
+        if (!(topView.presentedViewController == self.joypadView))
+            [topView presentViewController:self.joypadView
+                                  animated:YES
+                                completion:nil];
+    }
+    else if (topView.presentedViewController == self.joypadView)
+        [topView dismissViewControllerAnimated:NO
+                                    completion:nil];
 }
 
 @end
