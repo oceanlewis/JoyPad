@@ -9,6 +9,7 @@
 #import "BTLEPeripheral.h"
 
 @implementation BTLEPeripheral
+
 @synthesize currentGamepadState;
 @synthesize gamepadConfiguration;
 #pragma mark - INIT
@@ -19,10 +20,8 @@
 - (id)init {
     self = [super init];
     if (self) {
+        peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
         [self buildService];
-        peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self
-                                                             queue:nil
-                                                           options:nil];
     }
     return self;
 }
@@ -48,20 +47,67 @@
     return self;
 }
 - (void)buildService {
+    
     gamepadConfigurations = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:GAMEPAD_CONFIGURATION_CHARACTERISTIC_UUID] properties:(CBCharacteristicPropertyRead|CBCharacteristicPropertyNotify) value:nil permissions:CBAttributePermissionsReadable];
     gamepadState = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:GAMEPAD_STATE_CHARACTERISTIC_UUID] properties:(CBCharacteristicPropertyRead|CBCharacteristicPropertyNotify) value:nil permissions:CBAttributePermissionsReadable];
+    shouldDisconnect = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:SHOULD_DISCONNECT_CHARACTERISTIC_UUID] properties:(CBCharacteristicPropertyRead|CBCharacteristicPropertyNotify) value:nil permissions:CBAttributePermissionsReadable];
     transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:MAIN_TRANSFER_SERVICE_UUID] primary:YES];
-    transferService.characteristics = @[gamepadConfigurations, gamepadState];
+    transferService.characteristics = @[gamepadConfigurations, gamepadState, shouldDisconnect];
     advertisement = [NSMutableDictionary dictionary];
     [advertisement setObject:[self getName] forKey:CBAdvertisementDataLocalNameKey];
     [advertisement setObject:@[[CBUUID UUIDWithString:MAIN_TRANSFER_SERVICE_UUID]] forKey:CBAdvertisementDataServiceUUIDsKey];
-    
+    [self broadcastDisconnect:NO];
     currentGamepadState.stateFlags = 0;
     currentGamepadState.deltaX = 0.0;
     currentGamepadState.deltaY = 0.0;
 }
 
-#pragma mark - JoyPad Events
+#pragma mark - JoyPad Actions
+- (void)updateConfigurations:(NSDictionary *)newConfigurations {
+    //Load KeyCodes into memory.
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"KeyCodeRepresentations (hex)" ofType:@"plist"];
+    NSDictionary *keyCodes = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    NSString *a = [keyCodes objectForKey:[newConfigurations objectForKey:@"A_Button"]];
+    gamepadConfiguration.a = [self convertNSStringToCGKeyCode:a];
+    
+    NSString *b = [keyCodes objectForKey:[newConfigurations objectForKey:@"B_Button"]];
+    gamepadConfiguration.b = [self convertNSStringToCGKeyCode:b];
+    
+    NSString *x = [keyCodes objectForKey:[newConfigurations objectForKey:@"X_Button"]];
+    gamepadConfiguration.x = [self convertNSStringToCGKeyCode:x];
+    
+    NSString *y = [keyCodes objectForKey:[newConfigurations objectForKey:@"Y_Button"]];
+    gamepadConfiguration.y = [self convertNSStringToCGKeyCode:y];
+    
+    NSString *start = [keyCodes objectForKey:[newConfigurations objectForKey:@"Start_Button"]];
+    gamepadConfiguration.start = [self convertNSStringToCGKeyCode:start];
+    
+    NSString *select = [keyCodes objectForKey:[newConfigurations objectForKey:@"Select_Button"]];
+    gamepadConfiguration.select = [self convertNSStringToCGKeyCode:select];
+    
+    NSString *up = [keyCodes objectForKey:[newConfigurations objectForKey:@"DPad_Up"]];
+    gamepadConfiguration.dpadUp = [self convertNSStringToCGKeyCode:up];
+    
+    NSString *down = [keyCodes objectForKey:[newConfigurations objectForKey:@"DPad_Down"]];
+    gamepadConfiguration.dpadDown = [self convertNSStringToCGKeyCode:down];
+    
+    NSString *left = [keyCodes objectForKey:[newConfigurations objectForKey:@"DPad_Left"]];
+    gamepadConfiguration.dpadLeft = [self convertNSStringToCGKeyCode:left
+                                     ];
+    NSString *right = [keyCodes objectForKey:[newConfigurations objectForKey:@"DPad_Right"]];
+    gamepadConfiguration.dpadRight = [self convertNSStringToCGKeyCode:right];
+    
+    // Now that we've finally parsed our new config data, let's broadcast it so that it's actually useful.
+    [self broadcastNewConfigurations:[NSData dataWithBytes:&gamepadConfiguration length:20]];
+}
+
+- (CGKeyCode)convertNSStringToCGKeyCode:(NSString *)hexKeyCodeString {
+    uint returnCode;
+    [[NSScanner scannerWithString:hexKeyCodeString] scanHexInt:&returnCode];
+    return (CGKeyCode)returnCode;
+}
+
 - (void)buttonEvent:(NSString *)buttonName buttonState:(BOOL)wasPressed {
     if ([buttonName isEqualToString:@"A_Button"]) {
         if (wasPressed)
@@ -140,7 +186,7 @@
     dRight = stateFlags & DPAD_RIGHT_MASK;
     (dRight > 0)?(dRight = 1):(dRight = 0);
     
-    NSLog(@"deltaX: %6.2f\t\tdeltaY: %6.2f", currentGamepadState.deltaX, currentGamepadState.deltaY);
+    NSLog(@"deltaX: %6.2f\t\tdeltaY: %6.2f", currentState.deltaX, currentState.deltaY);
     NSLog(@"%d %d %d %d %d %d %d %d %d %d", dRight, dLeft, dDown, dUp, selectState, startState, yState, xState, bState, aState);
 }
 
@@ -162,22 +208,32 @@
 //}
 
 -(void)broadcastNewConfigurations:(NSData *)gamepadConfigs{
-    NSLog(@"New Configurations Broadcasted!");
+    NSLog(@"New Configurations Broadcast!");
     if(peripheralManager)
         [peripheralManager updateValue:gamepadConfigs
                      forCharacteristic:gamepadConfigurations
                   onSubscribedCentrals:nil];
-    else NSLog(@"broadcastNewConfigurations FAILED - No PeripheralManager!");
+    else NSLog(@"New Configurations Broadcast FAILED - No PeripheralManager!");
 
 }
 
 -(void) broadcastJoypadState:(GamepadState)newState{
-    NSLog(@"JoyPad State Broadcasted!");
+    NSLog(@"JoyPad State Broadcast!");
     if(peripheralManager)
         [peripheralManager updateValue:[NSData dataWithBytes:&newState length:10]
                      forCharacteristic:gamepadState
                   onSubscribedCentrals:nil];
-    else NSLog(@"broadcastJoypadState FAILED - No PeripheralManager!");
+    else NSLog(@"JoyPad State Broadcast FAILED - No PeripheralManager!");
+}
+
+- (void)broadcastDisconnect:(BOOL)shouldDisconnectBOOL {
+    NSLog(@"Broadcast disconnect.");
+    NSNumber *dc = [NSNumber numberWithBool:shouldDisconnectBOOL];
+    shouldDisconnectData = [NSMutableData dataWithBytes:(__bridge const void *)(dc) length:1];
+    if(peripheralManager)
+        [peripheralManager updateValue:shouldDisconnectData forCharacteristic:shouldDisconnect onSubscribedCentrals:nil];
+    else if (shouldDisconnectBOOL == YES)
+        NSLog(@"Broadcast disconnect FAILED - No PeripheralManager!");
 }
 
 -(NSUInteger) hardwareState{
@@ -297,8 +353,9 @@
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic{
     //    NSLog(@"delegate: Central subscribed to characteristic:%@",[characteristic UUID]);
-    if(_state != PeripheralConnectionStateConnected)
+    if(_state != PeripheralConnectionStateConnected) {
         [self setState:PeripheralConnectionStateConnected];
+    }
 }
 -(void)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)peripheral{
     //    NSLog(@"peripheralManagerIsReadyToUpdateSubscribers");

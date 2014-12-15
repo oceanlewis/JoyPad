@@ -13,8 +13,9 @@
 {
     CGPoint touchLocation;
     JoystickDelta deltaFromJStickCenter;
-    CGPoint dpadOrigin;
+    CGPoint dpadCenter;
     CGPoint dpadDestination;
+    UIWindow *window;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *joystickView;

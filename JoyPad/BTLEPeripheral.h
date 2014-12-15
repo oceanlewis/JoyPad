@@ -10,6 +10,7 @@
 #define MAIN_TRANSFER_SERVICE_UUID                      @"B8C9D2F5-AB53-4D4A-8F41-C764EA5577C9"
 #define GAMEPAD_STATE_CHARACTERISTIC_UUID               @"4B0CDC50-C3F6-4D64-8001-2C361BEF1D99"
 #define GAMEPAD_CONFIGURATION_CHARACTERISTIC_UUID       @"3E128AE1-4BD6-4F7D-A49E-B3E789E6C4AC"
+#define SHOULD_DISCONNECT_CHARACTERISTIC_UUID @"26B30EA8-1652-4EFF-9449-ECE0A6A8E241"
 
 //Gamepad State Masks
 #define A_BUTTON_MASK       0x0001
@@ -32,7 +33,13 @@ typedef struct {
 } GamepadState;
 
 typedef struct {
-    CGKeyCode a, b, x, y, select, start;
+    CGKeyCode a, b, x, y,
+    start,
+    select,
+    dpadUp,
+    dpadDown,
+    dpadLeft,
+    dpadRight;
 } GamepadConfiguration;
 
 typedef struct {
@@ -54,15 +61,20 @@ typedef enum : NSUInteger {
 -(void) hardwareStateDidUpdate:(NSInteger)hardwareState;
 @end
 
+//@protocol GameDockerDelegate
+//- (void)cleanup;
+//@end
+
 #pragma mark - BTLEPeripheral (THIS)
 @interface BTLEPeripheral : NSObject <CBPeripheralManagerDelegate>
 {
     CBPeripheralManager *peripheralManager;
     CBMutableService *transferService;
-    CBMutableCharacteristic *gamepadState, *gamepadConfigurations;
+    CBMutableCharacteristic *gamepadState, *gamepadConfigurations, *shouldDisconnect;
     NSMutableDictionary *advertisement;
     NSMutableData *gamepadStateData;
     NSMutableData *gamepadConfigData;
+    NSMutableData *shouldDisconnectData;
     NSMutableDictionary *gamepadKeyBindings;
     BOOL preventInitialAdvertising;
 }
@@ -74,9 +86,10 @@ typedef enum : NSUInteger {
 -(id) initWithDelegate:(id<BTLEPeripheralDelegate>)delegate;
 -(id) initWithDelegate:(id<BTLEPeripheralDelegate>)delegate WithoutAdvertising:(BOOL)preventAdvertising;
 
-#pragma mark - JoyPad Events
+#pragma mark - JoyPad Actions
 - (void)buttonEvent:(NSString *)buttonName buttonState:(BOOL)wasPresssed;
 - (void)joystickEvent:(JoystickDelta)deltas;
+- (void)updateConfigurations:(NSDictionary *)newConfigurations;
 
 #pragma mark - Broadcasts
 -(void) broadcastNewConfigurations:(NSData*)data;
@@ -97,6 +110,6 @@ typedef enum : NSUInteger {
 @property (readonly) BOOL isAdvertising;
 -(void) startAdvertisements;
 -(void) stopAdvertisements:(BOOL)serverAlreadyDisconnected;
-
+-(void) broadcastDisconnect:(BOOL)shouldDisconnect;
 
 @end

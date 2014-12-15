@@ -16,9 +16,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) BTLEPeripheral *bluetoothServer;
-@property (strong, nonatomic) ConfigurationsMenuViewController *configurationsView;
-@property (strong, nonatomic) JoyPadViewController *joypadView;
+@property (retain, nonatomic) BTLEPeripheral *bluetoothServer;
+@property (retain, nonatomic) ConfigurationsMenuViewController *configurationsView;
+@property (retain, nonatomic) JoyPadViewController *joypadView;
 
 - (void)beginPairingProcess;
+- (void)cancelConnectionToCentral;
+
 @end

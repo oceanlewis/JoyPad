@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EBAE2021A371B1A00127084 /* KeyCodeRepresentations (hex).plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EBAE2011A371B1A00127084 /* KeyCodeRepresentations (hex).plist */; };
 		8EE55FE61A329E9100BF821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FE51A329E9100BF821C /* main.m */; };
 		8EE55FE91A329E9100BF821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FE81A329E9100BF821C /* AppDelegate.m */; };
 		8EE55FEF1A329E9100BF821C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FED1A329E9100BF821C /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8EBAE2011A371B1A00127084 /* KeyCodeRepresentations (hex).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KeyCodeRepresentations (hex).plist"; sourceTree = "<group>"; };
 		8EE55FE01A329E9100BF821C /* JoyPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoyPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE55FE41A329E9100BF821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EE55FE51A329E9100BF821C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		8EE55FE31A329E9100BF821C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EBAE2011A371B1A00127084 /* KeyCodeRepresentations (hex).plist */,
 				8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */,
 				8EE55FE41A329E9100BF821C /* Info.plist */,
 				8EE55FE51A329E9100BF821C /* main.m */,
@@ -273,6 +276,7 @@
 				8EE55FEF1A329E9100BF821C /* Main.storyboard in Resources */,
 				8EE560251A32A06300BF821C /* ButtonA.png in Resources */,
 				8EE560301A32A06300BF821C /* leftArrow.png in Resources */,
+				8EBAE2021A371B1A00127084 /* KeyCodeRepresentations (hex).plist in Resources */,
 				8EE5602A1A32A06300BF821C /* ButtonY_pressed.png in Resources */,
 				8EE5602B1A32A06300BF821C /* ButtonY.png in Resources */,
 				8EE560321A32A06300BF821C /* upArrow.png in Resources */,

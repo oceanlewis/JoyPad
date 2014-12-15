@@ -13,6 +13,7 @@
 @property (weak, nonatomic) UIStoryboard *mainStoryboard;
 @end
 
+
 @implementation AppDelegate
 
 
@@ -25,8 +26,9 @@
     self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.configurationsView = [self.mainStoryboard instantiateInitialViewController];
     self.joypadView = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"JoyPadView"];
-    self.bluetoothServer = [[BTLEPeripheral alloc] init];
-    self.joypadView.bluetoothServer = self.bluetoothServer;
+    [self.configurationsView loadView];
+    id delegate = [[UIApplication sharedApplication] delegate];
+    delegate = self;
     return YES;
 }
 
@@ -52,10 +54,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark - Custom Commands
-- (void)beginPairingProcess {
-    [self.bluetoothServer startAdvertisements];
-}
+//#pragma mark - Custom Commands
+//- (void)beginPairingProcess {
+//    [self.bluetoothServer startAdvertisements];
+//}
 #pragma mark - Scene Transitions
 - (void)deviceOrientationWasChanged:(NSNotification *)notification {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
@@ -68,8 +70,27 @@
                                 completion:nil];
     }
     else if (topView.presentedViewController == self.joypadView)
-        [topView dismissViewControllerAnimated:NO
+        [topView dismissViewControllerAnimated:YES
                                     completion:nil];
+    
+    [self.configurationsView finalizeConfigurations];
+}
+
+- (void)beginPairingProcess {
+    if (!self.bluetoothServer) {
+        self.bluetoothServer = [[BTLEPeripheral alloc] init];
+        [self.bluetoothServer broadcastDisconnect:NO];
+        if (!self.configurationsView.bluetoothServer)
+            self.configurationsView.bluetoothServer = self.bluetoothServer;
+        if (!self.joypadView.bluetoothServer)
+            self.joypadView.bluetoothServer = self.bluetoothServer;
+    }
+}
+- (void)cancelConnectionToCentral {
+    [self.bluetoothServer broadcastDisconnect:YES];
+    self.joypadView.bluetoothServer = nil;
+    self.configurationsView.bluetoothServer = nil;
+    self.bluetoothServer = nil;
 }
 
 @end
