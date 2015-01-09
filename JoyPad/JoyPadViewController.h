@@ -30,6 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectButton;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
-@property (strong, nonatomic) BTLEPeripheral *bluetoothServer;
+@property (weak) BTLEPeripheral *bluetoothServer;
 
 @end

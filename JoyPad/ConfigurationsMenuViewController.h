@@ -25,7 +25,7 @@
 @property (retain, nonatomic) IBOutlet UITextField *selectButton;
 @property (retain, nonatomic) IBOutlet UIButton *beginPairingButton;
 @property (retain, nonatomic) IBOutlet UIButton *disconnectButton;
-@property BTLEPeripheral *bluetoothServer;
+@property (weak) BTLEPeripheral *bluetoothServer;
 
 - (void)finalizeConfigurations;
 

@@ -15,7 +15,9 @@
 
 
 @implementation AppDelegate
-
+@synthesize bluetoothServer;
+@synthesize configurationsView;
+@synthesize joypadView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

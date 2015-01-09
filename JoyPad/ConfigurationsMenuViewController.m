@@ -53,17 +53,6 @@
 
 - (void)finalizeConfigurations {
     NSArray *keys = [NSArray arrayWithObjects:@"A_Button", @"B_Button" ,@"X_Button", @"Y_Button", @"Start_Button", @"Select_Button", @"DPad_Up", @"DPad_Down", @"DPad_Left", @"DPad_Right", nil];
-    NSString *aButton, *bButton, *xButton, *yButton, *startButton, *selectButton, *dpadUp, *dpadDown, *dpadLeft, *dpadRight;
-    aButton = self.aButton.text;
-    bButton = self.bButton.text;
-    xButton = self.xButton.text;
-    yButton = self.yButton.text;
-    startButton = self.startButton.text;
-    selectButton = self.selectButton.text;
-    dpadUp = self.dpadUp.text;
-    dpadDown = self.dpadDown.text;
-    dpadLeft = self.dpadLeft.text;
-    dpadRight = self.dpadRight.text;
     NSArray *objects = [NSArray arrayWithObjects:self.aButton.text, [self.bButton text], [self.xButton text], [self.yButton text], [self.startButton text], [self.selectButton text], [self.dpadUp text], [self.dpadDown text], [self.dpadLeft text], [self.dpadRight text], nil];
     NSDictionary *gamepadConfigurations = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     [self.bluetoothServer updateConfigurations:gamepadConfigurations];
