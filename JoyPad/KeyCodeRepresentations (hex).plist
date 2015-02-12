@@ -116,5 +116,7 @@
 	<string>0x7B</string>
 	<key>ArrowRight</key>
 	<string>0x7C</string>
+	<key>MouseEvent</key>
+	<string>0xFF</string>
 </dict>
 </plist>

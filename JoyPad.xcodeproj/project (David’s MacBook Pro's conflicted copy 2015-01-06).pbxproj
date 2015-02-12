@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EBAE2021A371B1A00127084 /* KeyCodeRepresentations (hex).plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EBAE2011A371B1A00127084 /* KeyCodeRepresentations (hex).plist */; };
+		8EE55FE61A329E9100BF821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FE51A329E9100BF821C /* main.m */; };
+		8EE55FE91A329E9100BF821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FE81A329E9100BF821C /* AppDelegate.m */; };
+		8EE55FEF1A329E9100BF821C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FED1A329E9100BF821C /* Main.storyboard */; };
+		8EE55FF11A329E9100BF821C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FF01A329E9100BF821C /* Images.xcassets */; };
+		8EE55FF41A329E9100BF821C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE55FF21A329E9100BF821C /* LaunchScreen.xib */; };
+		8EE560001A329E9100BF821C /* JoyPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE55FFF1A329E9100BF821C /* JoyPadTests.m */; };
+		8EE5600E1A329EF100BF821C /* ConfigurationsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */; };
+		8EE560111A329F6000BF821C /* JoyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE560101A329F6000BF821C /* JoyPadViewController.m */; };
+		8EE560141A329FB300BF821C /* BTLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE560131A329FB300BF821C /* BTLEPeripheral.m */; };
+		8EE560241A32A06300BF821C /* ButtonA_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560151A32A06300BF821C /* ButtonA_pressed.png */; };
+		8EE560251A32A06300BF821C /* ButtonA.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560161A32A06300BF821C /* ButtonA.png */; };
+		8EE560261A32A06300BF821C /* ButtonB_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560171A32A06300BF821C /* ButtonB_pressed.png */; };
+		8EE560271A32A06300BF821C /* ButtonB.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560181A32A06300BF821C /* ButtonB.png */; };
+		8EE560281A32A06300BF821C /* ButtonX_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560191A32A06300BF821C /* ButtonX_pressed.png */; };
+		8EE560291A32A06300BF821C /* ButtonX.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601A1A32A06300BF821C /* ButtonX.png */; };
+		8EE5602A1A32A06300BF821C /* ButtonY_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601B1A32A06300BF821C /* ButtonY_pressed.png */; };
+		8EE5602B1A32A06300BF821C /* ButtonY.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601C1A32A06300BF821C /* ButtonY.png */; };
+		8EE5602C1A32A06300BF821C /* DirectionalPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601D1A32A06300BF821C /* DirectionalPad.png */; };
+		8EE5602D1A32A06300BF821C /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601E1A32A06300BF821C /* downArrow.png */; };
+		8EE5602E1A32A06300BF821C /* iOSArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5601F1A32A06300BF821C /* iOSArrow.png */; };
+		8EE5602F1A32A06300BF821C /* joystickTouchedImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560201A32A06300BF821C /* joystickTouchedImage.png */; };
+		8EE560301A32A06300BF821C /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560211A32A06300BF821C /* leftArrow.png */; };
+		8EE560311A32A06300BF821C /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560221A32A06300BF821C /* rightArrow.png */; };
+		8EE560321A32A06300BF821C /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560231A32A06300BF821C /* upArrow.png */; };
+		8EE560351A32A0BA00BF821C /* KeyCodeRepresentations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EE55FFA1A329E9100BF821C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EE55FD81A329E9100BF821C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE55FDF1A329E9100BF821C;
+			remoteInfo = JoyPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8EBAE2011A371B1A00127084 /* KeyCodeRepresentations (hex).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KeyCodeRepresentations (hex).plist"; sourceTree = "<group>"; };
+		8EE55FE01A329E9100BF821C /* JoyPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoyPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE55FE41A329E9100BF821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE55FE51A329E9100BF821C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8EE55FE71A329E9100BF821C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8EE55FE81A329E9100BF821C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8EE55FEE1A329E9100BF821C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EE55FF01A329E9100BF821C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8EE55FF31A329E9100BF821C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8EE55FF91A329E9100BF821C /* JoyPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE55FFE1A329E9100BF821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE55FFF1A329E9100BF821C /* JoyPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyPadTests.m; sourceTree = "<group>"; };
+		8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationsMenuViewController.h; sourceTree = "<group>"; };
+		8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationsMenuViewController.m; sourceTree = "<group>"; };
+		8EE5600F1A329F6000BF821C /* JoyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyPadViewController.h; sourceTree = "<group>"; };
+		8EE560101A329F6000BF821C /* JoyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyPadViewController.m; sourceTree = "<group>"; };
+		8EE560121A329FB300BF821C /* BTLEPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPeripheral.h; sourceTree = "<group>"; };
+		8EE560131A329FB300BF821C /* BTLEPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPeripheral.m; sourceTree = "<group>"; };
+		8EE560151A32A06300BF821C /* ButtonA_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonA_pressed.png; sourceTree = "<group>"; };
+		8EE560161A32A06300BF821C /* ButtonA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonA.png; sourceTree = "<group>"; };
+		8EE560171A32A06300BF821C /* ButtonB_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonB_pressed.png; sourceTree = "<group>"; };
+		8EE560181A32A06300BF821C /* ButtonB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonB.png; sourceTree = "<group>"; };
+		8EE560191A32A06300BF821C /* ButtonX_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonX_pressed.png; sourceTree = "<group>"; };
+		8EE5601A1A32A06300BF821C /* ButtonX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonX.png; sourceTree = "<group>"; };
+		8EE5601B1A32A06300BF821C /* ButtonY_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonY_pressed.png; sourceTree = "<group>"; };
+		8EE5601C1A32A06300BF821C /* ButtonY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonY.png; sourceTree = "<group>"; };
+		8EE5601D1A32A06300BF821C /* DirectionalPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DirectionalPad.png; sourceTree = "<group>"; };
+		8EE5601E1A32A06300BF821C /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
+		8EE5601F1A32A06300BF821C /* iOSArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSArrow.png; sourceTree = "<group>"; };
+		8EE560201A32A06300BF821C /* joystickTouchedImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystickTouchedImage.png; sourceTree = "<group>"; };
+		8EE560211A32A06300BF821C /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		8EE560221A32A06300BF821C /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		8EE560231A32A06300BF821C /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrow.png; sourceTree = "<group>"; };
+		8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyCodeRepresentations.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EE55FDD1A329E9100BF821C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE55FF61A329E9100BF821C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EE55FD71A329E9100BF821C = {
+			isa = PBXGroup;
+			children = (
+				8EE55FE21A329E9100BF821C /* JoyPad */,
+				8EE55FFC1A329E9100BF821C /* JoyPadTests */,
+				8EE55FE11A329E9100BF821C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EE55FE11A329E9100BF821C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EE55FE01A329E9100BF821C /* JoyPad.app */,
+				8EE55FF91A329E9100BF821C /* JoyPadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EE55FE21A329E9100BF821C /* JoyPad */ = {
+			isa = PBXGroup;
+			children = (
+				8EE55FED1A329E9100BF821C /* Main.storyboard */,
+				8EE55FE71A329E9100BF821C /* AppDelegate.h */,
+				8EE55FE81A329E9100BF821C /* AppDelegate.m */,
+				8EE5600F1A329F6000BF821C /* JoyPadViewController.h */,
+				8EE560101A329F6000BF821C /* JoyPadViewController.m */,
+				8EE5600C1A329EF100BF821C /* ConfigurationsMenuViewController.h */,
+				8EE5600D1A329EF100BF821C /* ConfigurationsMenuViewController.m */,
+				8EE560121A329FB300BF821C /* BTLEPeripheral.h */,
+				8EE560131A329FB300BF821C /* BTLEPeripheral.m */,
+				8EE55FF01A329E9100BF821C /* Images.xcassets */,
+				8EE55FF21A329E9100BF821C /* LaunchScreen.xib */,
+				8EE560331A32A06D00BF821C /* Images */,
+				8EE55FE31A329E9100BF821C /* Supporting Files */,
+			);
+			path = JoyPad;
+			sourceTree = "<group>";
+		};
+		8EE55FE31A329E9100BF821C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8EBAE2011A371B1A00127084 /* KeyCodeRepresentations (hex).plist */,
+				8EE560341A32A0BA00BF821C /* KeyCodeRepresentations.plist */,
+				8EE55FE41A329E9100BF821C /* Info.plist */,
+				8EE55FE51A329E9100BF821C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EE55FFC1A329E9100BF821C /* JoyPadTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EE55FFF1A329E9100BF821C /* JoyPadTests.m */,
+				8EE55FFD1A329E9100BF821C /* Supporting Files */,
+			);
+			path = JoyPadTests;
+			sourceTree = "<group>";
+		};
+		8EE55FFD1A329E9100BF821C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8EE55FFE1A329E9100BF821C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EE560331A32A06D00BF821C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8EE560151A32A06300BF821C /* ButtonA_pressed.png */,
+				8EE560161A32A06300BF821C /* ButtonA.png */,
+				8EE560171A32A06300BF821C /* ButtonB_pressed.png */,
+				8EE560181A32A06300BF821C /* ButtonB.png */,
+				8EE560191A32A06300BF821C /* ButtonX_pressed.png */,
+				8EE5601A1A32A06300BF821C /* ButtonX.png */,
+				8EE5601B1A32A06300BF821C /* ButtonY_pressed.png */,
+				8EE5601C1A32A06300BF821C /* ButtonY.png */,
+				8EE5601D1A32A06300BF821C /* DirectionalPad.png */,
+				8EE5601F1A32A06300BF821C /* iOSArrow.png */,
+				8EE560201A32A06300BF821C /* joystickTouchedImage.png */,
+				8EE560231A32A06300BF821C /* upArrow.png */,
+				8EE5601E1A32A06300BF821C /* downArrow.png */,
+				8EE560211A32A06300BF821C /* leftArrow.png */,
+				8EE560221A32A06300BF821C /* rightArrow.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EE55FDF1A329E9100BF821C /* JoyPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE560031A329E9100BF821C /* Build configuration list for PBXNativeTarget "JoyPad" */;
+			buildPhases = (
+				8EE55FDC1A329E9100BF821C /* Sources */,
+				8EE55FDD1A329E9100BF821C /* Frameworks */,
+				8EE55FDE1A329E9100BF821C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoyPad;
+			productName = JoyPad;
+			productReference = 8EE55FE01A329E9100BF821C /* JoyPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EE55FF81A329E9100BF821C /* JoyPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE560061A329E9100BF821C /* Build configuration list for PBXNativeTarget "JoyPadTests" */;
+			buildPhases = (
+				8EE55FF51A329E9100BF821C /* Sources */,
+				8EE55FF61A329E9100BF821C /* Frameworks */,
+				8EE55FF71A329E9100BF821C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EE55FFB1A329E9100BF821C /* PBXTargetDependency */,
+			);
+			name = JoyPadTests;
+			productName = JoyPadTests;
+			productReference = 8EE55FF91A329E9100BF821C /* JoyPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EE55FD81A329E9100BF821C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "David Lewis";
+				TargetAttributes = {
+					8EE55FDF1A329E9100BF821C = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = K45HUS8C7P;
+					};
+					8EE55FF81A329E9100BF821C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8EE55FDF1A329E9100BF821C;
+					};
+				};
+			};
+			buildConfigurationList = 8EE55FDB1A329E9100BF821C /* Build configuration list for PBXProject "JoyPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EE55FD71A329E9100BF821C;
+			productRefGroup = 8EE55FE11A329E9100BF821C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EE55FDF1A329E9100BF821C /* JoyPad */,
+				8EE55FF81A329E9100BF821C /* JoyPadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EE55FDE1A329E9100BF821C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE5602C1A32A06300BF821C /* DirectionalPad.png in Resources */,
+				8EE560311A32A06300BF821C /* rightArrow.png in Resources */,
+				8EE560271A32A06300BF821C /* ButtonB.png in Resources */,
+				8EE5602D1A32A06300BF821C /* downArrow.png in Resources */,
+				8EE560241A32A06300BF821C /* ButtonA_pressed.png in Resources */,
+				8EE55FEF1A329E9100BF821C /* Main.storyboard in Resources */,
+				8EE560251A32A06300BF821C /* ButtonA.png in Resources */,
+				8EE560301A32A06300BF821C /* leftArrow.png in Resources */,
+				8EBAE2021A371B1A00127084 /* KeyCodeRepresentations (hex).plist in Resources */,
+				8EE5602A1A32A06300BF821C /* ButtonY_pressed.png in Resources */,
+				8EE5602B1A32A06300BF821C /* ButtonY.png in Resources */,
+				8EE560321A32A06300BF821C /* upArrow.png in Resources */,
+				8EE55FF41A329E9100BF821C /* LaunchScreen.xib in Resources */,
+				8EE55FF11A329E9100BF821C /* Images.xcassets in Resources */,
+				8EE560261A32A06300BF821C /* ButtonB_pressed.png in Resources */,
+				8EE5602E1A32A06300BF821C /* iOSArrow.png in Resources */,
+				8EE560291A32A06300BF821C /* ButtonX.png in Resources */,
+				8EE560351A32A0BA00BF821C /* KeyCodeRepresentations.plist in Resources */,
+				8EE560281A32A06300BF821C /* ButtonX_pressed.png in Resources */,
+				8EE5602F1A32A06300BF821C /* joystickTouchedImage.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE55FF71A329E9100BF821C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EE55FDC1A329E9100BF821C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE560141A329FB300BF821C /* BTLEPeripheral.m in Sources */,
+				8EE560111A329F6000BF821C /* JoyPadViewController.m in Sources */,
+				8EE55FE91A329E9100BF821C /* AppDelegate.m in Sources */,
+				8EE5600E1A329EF100BF821C /* ConfigurationsMenuViewController.m in Sources */,
+				8EE55FE61A329E9100BF821C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE55FF51A329E9100BF821C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE560001A329E9100BF821C /* JoyPadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EE55FFB1A329E9100BF821C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE55FDF1A329E9100BF821C /* JoyPad */;
+			targetProxy = 8EE55FFA1A329E9100BF821C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8EE55FED1A329E9100BF821C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EE55FEE1A329E9100BF821C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8EE55FF21A329E9100BF821C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EE55FF31A329E9100BF821C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8EE560011A329E9100BF821C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EE560021A329E9100BF821C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EE560041A329E9100BF821C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = JoyPad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8EE560051A329E9100BF821C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = JoyPad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8EE560071A329E9100BF821C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JoyPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoyPad.app/JoyPad";
+			};
+			name = Debug;
+		};
+		8EE560081A329E9100BF821C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JoyPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoyPad.app/JoyPad";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EE55FDB1A329E9100BF821C /* Build configuration list for PBXProject "JoyPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE560011A329E9100BF821C /* Debug */,
+				8EE560021A329E9100BF821C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE560031A329E9100BF821C /* Build configuration list for PBXNativeTarget "JoyPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE560041A329E9100BF821C /* Debug */,
+				8EE560051A329E9100BF821C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE560061A329E9100BF821C /* Build configuration list for PBXNativeTarget "JoyPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE560071A329E9100BF821C /* Debug */,
+				8EE560081A329E9100BF821C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8EE55FD81A329E9100BF821C /* Project object */;
+}
